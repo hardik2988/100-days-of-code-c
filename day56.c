@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+// Q106: Write a program to take an array arr[] of integers as input, the task is to find the next greater element for each element of the array in order of their appearance in the array. Next greater element of an element in the array is the nearest element on the right which is greater than the current element. If there does not exist next greater of current element, then next greater element for current element is -1.
+//
+// N.B:
+// - Print the output for each element in a comma separated fashion.
+// - Do not use Stack, use brute force approach (nested loop) to solve.
+void question106() {
+    int n, i, j, next;
+    int arr[100];
+
+    printf("Enter Number of Elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("Enter Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i < n; i++) {
+        next = -1;
+
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] > arr[i]) {
+                next = arr[j];
+                break;
+            }
+        }
+
+        if (i < n - 1) {
+            printf("%d, ", next);
+        }
+
+        else {
+            printf("%d\n", next);
+        }
+    }
+}
+
+int main() {
+    question106();
+    return 0;
+}

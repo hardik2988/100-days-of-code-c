@@ -29,7 +29,7 @@ void question13() {
  // Q14: Write a program to input a character and check whether it is a vowel or consonant using if–else.
 
 void question14() {
-    char alphabet, vowel, consonant;
+    char alphabet;
 
     printf("Enter Alphabet: ");
     scanf (" %c", &alphabet);
